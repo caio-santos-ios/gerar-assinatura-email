@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input, select {
+  outline: none;
+  border: none;
+  border-radius: .5rem;
+  border: 1px solid #575757;
+}
+
+input {
+  width: 15rem;
+  padding: 0.5rem;
+}
+
+select {
+  padding: .65rem 1rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+.main {
+  width: 100dvw;
+  height: 100dvh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.form {
+  background-color: rgb(160, 160, 160);
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: .5rem;
+  padding: .5rem 0;
+  margin: 0 auto;
+}
+
+.group {
+  display: flex;
+  flex-flow: column;
+}
+
+.container-signature {
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.main[data-ong="oga"] {
+  .icon-redes {
+    background-color: #66823e;
+  }
+
+  .name, .pronoun {
+    color: #66823e;
+  }
+
+  .container-division {
+    border: .19rem solid #66823e;
+  }
+}
+
+.name, .pronoun {
+  font-weight: 700;
+}
+
+.job, .email, .phone {
+  font-weight: 400;
+  /* font-size: 15px; */
+}
+
+
+.main[data-ong="language"] {
+  .icon-redes {
+    background-color: #17634E;
+  }
+
+  .name, .pronoun {
+    color: #17634E;
+  }
+
+  .container-division {
+    border: .19rem solid #17634E;
+  }
+}
+
+.icon-redes {
+  padding: .3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin: .2rem;
+}
+
+.imagem {
+  display:block; 
+  /* width: 405px;  */
+  height: 25px; 
+  border-radius: 10px; 
+  object-fit: cover;
+  margin-top: 5px;
+}
+
+
+/* CARD ESTILIZAR */
+.container-style {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 50rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.form-style {
+  display: flex;
+  flex-flow: wrap;
+  gap: .5rem;
+  padding: .5rem 0;
+}
