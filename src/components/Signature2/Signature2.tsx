@@ -8,15 +8,15 @@ type Tprop = {
   phone: string;
   job: string;
   pronoun: string;
-  sizeIcon: number
   sizeName: number;
   sizeJob: number;
   sizePhone: number;
   sizePronoun: number;
   sizeLogo: number;
+  sizeNetworks: number;
 } 
 
-export default function Signature1({ong, name, email, phone, job, pronoun, sizeIcon, sizeName, sizeJob, sizePhone, sizePronoun,sizeLogo}: Tprop) {
+export default function Signature1({ong, name, email, phone, job, pronoun, sizeName, sizeJob, sizePhone, sizePronoun, sizeLogo, sizeNetworks}: Tprop) {
   const [networks] = useAtom(networksAtom)
 
   return (
@@ -38,7 +38,7 @@ export default function Signature1({ong, name, email, phone, job, pronoun, sizeI
                                     return (                                   
                                     <td key={i}>
                                         <a className="icon-redes" key={x.uri} href={x.uri}>
-                                        <img width={sizeIcon} alt="logo" src={x.image} />
+                                        <img width={sizeNetworks} alt="logo" src={x.image} />
                                         </a>                                                
                                     </td>                               
                                     )
@@ -51,10 +51,10 @@ export default function Signature1({ong, name, email, phone, job, pronoun, sizeI
                 </td>
                 <td className="container-division"></td>
                 <td style={{paddingLeft: '25px'}}>
-                    <a href="https://ogaweb.org/" target="_blank">
-                    <img width={90} src={ong == 'oga' ? 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764621984/OGA/cropped-white-background_bzsb2h_mizr0o.png' : 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764664826/LANGUAGE-FOR-JUSTICE/logo_tfix4z.png'} alt="" />
-                    </a>
-                    <span className="email">{email}</span>
+                  <a href="https://ogaweb.org/" target="_blank">
+                    <img width={sizeLogo} src={ong == 'oga' ? 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764621984/OGA/cropped-white-background_bzsb2h_mizr0o.png' : 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764664826/LANGUAGE-FOR-JUSTICE/logo_tfix4z.png'} alt="" />
+                  </a>
+                  <span className="email">{email}</span>
                 </td>             
             </tr>
           </tbody>                   

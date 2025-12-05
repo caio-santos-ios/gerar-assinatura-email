@@ -14,7 +14,6 @@ export default function Home() {
   const [phone, setPhone] = useState<string>("+34 691 377 424");
   const [email, setEmail] = useState<string>("");
   const [pronoun, setPronoun] = useState<string>("she/her");
-  const [sizeIcon, setSizeIcon] = useState(20);
   const [component, setComponent] = useState("");
   const [sizeName, setSizeName] = useState(16);
   const [sizeJob, setSizeJob] = useState(15);
@@ -23,6 +22,7 @@ export default function Home() {
   const [sizePronoun, setSizePronoun] = useState(15);
   const [sizeLogo, setSizeLogo] = useState(90);
   const [sizeLogo2, setSizeLogo2] = useState(400);
+  const [sizeNetworks, setSizeNetworks] = useState(15);
   const main = useRef<HTMLDivElement>(null);
 
 
@@ -40,6 +40,7 @@ export default function Home() {
       case "pronum": setSizePronoun(size); break;
       case "logo": setSizeLogo(size); break;
       case "logo2": setSizeLogo2(size); break;
+      case "networks": setSizeNetworks(size); break;
     }
   }
   
@@ -109,6 +110,7 @@ export default function Home() {
                   ong == "oga" &&
                   <option value="logo2">Imagem</option>
                 }
+                <option value="networks">Redes Sociais</option>
               </select>
             </div>
 
@@ -127,22 +129,22 @@ export default function Home() {
             typeModel == "1" ? 
             <Signature1 
               ong={ong} name={name} email={email} phone={phone} job={job} 
-              sizeIcon={sizeIcon} 
               sizeName={sizeName}
               sizeJob={sizeJob}
               sizePhone={sizePhone}
               sizeLogo={sizeLogo}
               sizeLogo2={sizeLogo2}
+              sizeNetworks={sizeNetworks}
             />           
             :
             <Signature2 
-            ong={ong} name={name} email={email} phone={phone} job={job} pronoun={pronoun} 
-            sizeIcon={sizeIcon}
-            sizeName={sizeName}
-            sizeJob={sizeJob}
-            sizePhone={sizePhone}
-            sizeLogo={sizeLogo}
-            sizePronoun={sizePronoun}
+              ong={ong} name={name} email={email} phone={phone} job={job} pronoun={pronoun} 
+              sizeName={sizeName}
+              sizeJob={sizeJob}
+              sizePhone={sizePhone}
+              sizeLogo={sizeLogo}
+              sizePronoun={sizePronoun}
+              sizeNetworks={sizeNetworks}
             />           
           }
         </div>

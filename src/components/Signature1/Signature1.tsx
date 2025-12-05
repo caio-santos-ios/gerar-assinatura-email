@@ -7,15 +7,15 @@ type Tprop = {
   email: string;
   phone: string;
   job: string;
-  sizeIcon: number,
   sizeName: number;
   sizeJob: number;
   sizePhone: number;
   sizeLogo2: number;
   sizeLogo: number;
+  sizeNetworks: number;
 } 
 
-export default function Signature1({ong, name, email, phone, job, sizeIcon, sizeName, sizeJob, sizePhone, sizeLogo, sizeLogo2}: Tprop) {
+export default function Signature1({ong, name, email, phone, job, sizeName, sizeJob, sizePhone, sizeLogo, sizeLogo2, sizeNetworks}: Tprop) {
   const [networks] = useAtom(networksAtom)
 
   return (
@@ -45,7 +45,7 @@ export default function Signature1({ong, name, email, phone, job, sizeIcon, size
                               i < 3 &&       
                               <td key={i}>
                                 <a className="icon-redes" key={x.uri} href={x.uri}>
-                                  <img width={sizeIcon} alt="logo" src={x.image} />
+                                  <img width={sizeNetworks} alt="logo" src={x.image} />
                                 </a>                                                
                               </td>                               
                             )
@@ -59,7 +59,7 @@ export default function Signature1({ong, name, email, phone, job, sizeIcon, size
                               i > 2 &&     
                               <td key={i} style={{marginRight: '3px'}}>
                                 <a className="icon-redes" key={x.uri} href={x.uri}>
-                                  <img width={sizeIcon} alt="logo" src={x.image} />
+                                  <img width={sizeNetworks} alt="logo" src={x.image} />
                                 </a>                                                
                               </td>
                             )
