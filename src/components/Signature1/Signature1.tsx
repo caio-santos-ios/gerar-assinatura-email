@@ -1,5 +1,6 @@
-import { networksAtom } from "@/src/jotai/networks.jotai"
+import { networksJusticeAtom, networksOGAAtom, TNetworks } from "@/src/jotai/networks.jotai"
 import { useAtom } from "jotai"
+import { useEffect, useState } from "react";
 
 type Tprop = {
   ong: "oga" | "language",
@@ -16,7 +17,17 @@ type Tprop = {
 } 
 
 export default function Signature1({ong, name, email, phone, job, sizeName, sizeJob, sizePhone, sizeLogo, sizeLogo2, sizeNetworks}: Tprop) {
-  const [networks] = useAtom(networksAtom)
+  const [networksOAG] = useAtom(networksOGAAtom)
+  const [networksJustice] = useAtom(networksJusticeAtom)
+  const [networks, setNetworks] = useState<TNetworks[]>([])
+
+  useEffect(() => {
+    if(ong == "oga") {
+      setNetworks(networksOAG)
+    } else {
+      setNetworks(networksJustice)
+    }
+  }, [ong])
 
   return (
     <div>
@@ -44,7 +55,7 @@ export default function Signature1({ong, name, email, phone, job, sizeName, size
                             return (  
                               i < 3 &&       
                               <td key={i}>
-                                <a className="icon-redes" key={x.uri} href={x.uri}>
+                                <a target="_blank" className="icon-redes" key={x.uri} href={x.uri}>
                                   <img width={sizeNetworks} alt="logo" src={x.image} />
                                 </a>                                                
                               </td>                               
@@ -58,7 +69,7 @@ export default function Signature1({ong, name, email, phone, job, sizeName, size
                             return (         
                               i > 2 &&     
                               <td key={i} style={{marginRight: '3px'}}>
-                                <a className="icon-redes" key={x.uri} href={x.uri}>
+                                <a target="_blank" className="icon-redes" key={x.uri} href={x.uri}>
                                   <img width={sizeNetworks} alt="logo" src={x.image} />
                                 </a>                                                
                               </td>
