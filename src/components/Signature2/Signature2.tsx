@@ -1,8 +1,8 @@
 "use client";
 
-import { networksOGAAtom, networksJusticeAtom } from "@/src/jotai/networks.jotai"
+import { networksOGAAtom, networksJusticeAtom, TNetworks } from "@/src/jotai/networks.jotai"
 import { useAtom } from "jotai"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Tprop = {
   ong: "oga" | "language",
@@ -20,10 +20,17 @@ type Tprop = {
 } 
 
 export default function Signature1({ong, name, email, phone, job, pronoun, sizeName, sizeJob, sizePhone, sizePronoun, sizeLogo, sizeNetworks}: Tprop) {
-    const [networksOAG] = useAtom(networksOGAAtom)
-    const [networksJustice] = useAtom(networksJusticeAtom)
-    const [networks] = useState([])
-    
+  const [networksOAG] = useAtom(networksOGAAtom)
+  const [networksJustice] = useAtom(networksJusticeAtom)
+  const [networks, setNetworks] = useState<TNetworks[]>([])
+
+  useEffect(() => {
+    if(ong == "oga") {
+      setNetworks(networksOAG)
+    } else {
+      setNetworks(networksJustice)
+    }
+  }, [ong])
 
   return (
     <div>
