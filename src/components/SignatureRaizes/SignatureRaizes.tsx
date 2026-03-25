@@ -69,22 +69,30 @@ export default function SignatureRaizes({ name, email, phone, job, pronoun, size
               )}
 
               {/* Ícones redes sociais */}
-              <table cellPadding={0} cellSpacing={0} style={{ marginTop: '10px' }}>
+              <table cellPadding={0} cellSpacing={0} style={{ marginTop: '10px', width: '100%' }}>
                 <tbody>
                   <tr>
-                    {networks.map((x: any, i: number) => (
-                      <td key={i} style={{ paddingRight: '4px' }}>
-                        <a target="_blank" href={x.uri}>
-                          <img width={sizeNetworks} alt="rede social" src={x.image} />
-                        </a>
-                      </td>
-                    ))}
+                    <td style={{ textAlign: 'right' }}>
+                      <table cellPadding={0} cellSpacing={0} style={{ marginLeft: 'auto' }}>
+                        <tbody>
+                          <tr>
+                            {networks.map((x: any, i: number) => (
+                              <td key={i} style={{ paddingRight: '4px' }}>
+                                <a target="_blank" href={x.uri}>
+                                  <img width={sizeNetworks} alt="rede social" src={x.image} />
+                                </a>
+                              </td>
+                            ))}
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
                   </tr>
                 </tbody>
               </table>
 
               {/* Site */}
-              <div style={{ marginTop: '8px' }}>
+              <div style={{ marginTop: '8px', textAlign: 'end' }}>
                 
                 <a  href="https://www.raizesds.com.br"
                   target="_blank"
@@ -92,6 +100,7 @@ export default function SignatureRaizes({ name, email, phone, job, pronoun, size
                     fontSize: `${sizeJob}px`,
                     color: '#444444',
                     textDecoration: 'underline',
+                    textAlign: 'end'
                   }}
                 >
                   www.raizesds.com.br
