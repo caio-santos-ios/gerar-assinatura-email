@@ -25,6 +25,7 @@ export default function Home() {
   const [sizeNetworks, setSizeNetworks] = useState(15);
   const main = useRef<HTMLDivElement>(null);
 
+  
   useEffect(() => {
     main.current?.setAttribute("data-ong", ong);
   }, [ong]);
