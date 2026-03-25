@@ -1,11 +1,12 @@
 "use client";
 
-import { networksOGAAtom, networksJusticeAtom, TNetworks } from "@/src/jotai/networks.jotai"
+import { networksOGAAtom, networksJusticeAtom, networksRaizesAtom, TNetworks } from "@/src/jotai/networks.jotai"
+import { TOng } from "@/src/types/signature.type";
 import { useAtom } from "jotai"
 import { useEffect, useState } from "react";
 
 type Tprop = {
-  ong: "oga" | "language",
+  ong: TOng,
   name: string;
   email: string;
   phone: string;
@@ -22,15 +23,24 @@ type Tprop = {
 export default function Signature1({ong, name, email, phone, job, pronoun, sizeName, sizeJob, sizePhone, sizePronoun, sizeLogo, sizeNetworks}: Tprop) {
   const [networksOAG] = useAtom(networksOGAAtom)
   const [networksJustice] = useAtom(networksJusticeAtom)
+  const [networksRaizes] = useAtom(networksRaizesAtom)
   const [networks, setNetworks] = useState<TNetworks[]>([])
 
   useEffect(() => {
     if(ong == "oga") {
       setNetworks(networksOAG)
+    } else if(ong == "raizes") {
+      setNetworks(networksRaizes)
     } else {
       setNetworks(networksJustice)
     }
   }, [ong])
+
+  const logoSrc = ong == 'oga'
+    ? 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764621984/OGA/cropped-white-background_bzsb2h_mizr0o.png'
+    : ong == 'raizes'
+    ? 'URL_DA_LOGO_RAIZES' // TODO: substituir pela URL real
+    : 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764664826/LANGUAGE-FOR-JUSTICE/logo_tfix4z.png'
 
   return (
     <div>
@@ -65,7 +75,7 @@ export default function Signature1({ong, name, email, phone, job, pronoun, sizeN
                 <td className="container-division"></td>
                 <td style={{paddingLeft: '25px'}}>
                   <a href="https://ogaweb.org/" target="_blank">
-                    <img width={sizeLogo} src={ong == 'oga' ? 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764621984/OGA/cropped-white-background_bzsb2h_mizr0o.png' : 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764664826/LANGUAGE-FOR-JUSTICE/logo_tfix4z.png'} alt="" />
+                    <img width={sizeLogo} src={logoSrc} alt="" />
                   </a>
                   <span className="email">{email}</span>
                 </td>             

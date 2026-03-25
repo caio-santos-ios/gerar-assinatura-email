@@ -3,11 +3,13 @@
 import { useEffect, useState, useRef } from "react";
 import Signature1 from "../components/Signature1/Signature1";
 import Signature2 from "../components/Signature2/Signature2";
+import SignatureRaizes from "../components/SignatureRaizes/SignatureRaizes";
+import { TOng } from "../types/signature.type";
 
 
 
 export default function Home() {
-  const [ong, setOng] = useState<"oga" | "language">("oga");
+  const [ong, setOng] = useState<TOng>("oga");
   const [typeModel, setTypeModel] = useState<string>("1");
   const [name, setName] = useState<string>("Anna Ferreira");
   const [job, setJob] = useState<string>("Co-Founder & President");
@@ -52,6 +54,7 @@ export default function Home() {
             <select onChange={(e: any) => setOng(e.target.value)} name="ong" id="ong">
               <option value="oga">OGA</option>
               <option value="language">Language For Justice</option>
+              <option value="raizes">Raízes</option>
             </select>
           </div>
 
@@ -107,7 +110,7 @@ export default function Home() {
                 <option value="email">E-mail</option>
                 <option value="logo">Logo</option>
                 {
-                  ong == "oga" &&
+                  (ong == "oga" || ong == "raizes") &&
                   <option value="logo2">Imagem</option>
                 }
                 <option value="networks">Redes Sociais</option>
@@ -126,18 +129,34 @@ export default function Home() {
 
         <div className="container-signature">
           {
-            typeModel == "1" ? 
-            <Signature1 
-              ong={ong} name={name} email={email} phone={phone} job={job} 
-              sizeName={sizeName}
-              sizeJob={sizeJob}
-              sizePhone={sizePhone}
-              sizeLogo={sizeLogo}
-              sizeLogo2={sizeLogo2}
-              sizeNetworks={sizeNetworks}
-            />           
-            :
-            <Signature2 
+            ong == "raizes" && (
+              <SignatureRaizes
+                ong={ong} name={name} email={email} phone={phone} job={job} pronoun={pronoun}
+                sizeName={sizeName}
+                sizeJob={sizeJob}
+                sizePhone={sizePhone}
+                sizeLogo={sizeLogo}
+                sizePronoun={sizePronoun}
+                sizeNetworks={sizeNetworks}
+              />
+            )
+          }
+          {
+            ong != "raizes" && typeModel == "1" && (
+              <Signature1 
+                ong={ong} name={name} email={email} phone={phone} job={job} 
+                sizeName={sizeName}
+                sizeJob={sizeJob}
+                sizePhone={sizePhone}
+                sizeLogo={sizeLogo}
+                sizeLogo2={sizeLogo2}
+                sizeNetworks={sizeNetworks}
+              />           
+            )    
+          }
+          {
+            ong != "raizes" && typeModel == "2" && ( 
+              <Signature2 
               ong={ong} name={name} email={email} phone={phone} job={job} pronoun={pronoun} 
               sizeName={sizeName}
               sizeJob={sizeJob}
@@ -145,7 +164,8 @@ export default function Home() {
               sizeLogo={sizeLogo}
               sizePronoun={sizePronoun}
               sizeNetworks={sizeNetworks}
-            />           
+              />       
+            )
           }
         </div>
     </main>

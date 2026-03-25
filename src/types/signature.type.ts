@@ -1,0 +1,1 @@
+export type TOng = "oga" | "language" | "raizes";
