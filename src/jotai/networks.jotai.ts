@@ -13,7 +13,8 @@ const linktreeOGA    = 'https://api.iconify.design/simple-icons:linktree.svg?col
 const blueskyJustice  = 'https://api.iconify.design/simple-icons:bluesky.svg?color=%232A9D8F'
 const linktreeJustice = 'https://api.iconify.design/simple-icons:linktree.svg?color=%232A9D8F'
 
-const blueskyRaizes  = 'https://api.iconify.design/simple-icons:bluesky.svg?color=%23E8A020'
+// const blueskyRaizes  = 'https://api.iconify.design/simple-icons:bluesky.svg?color=%23E8A020'
+const siteRaizes = 'https://api.iconify.design/mdi:web.svg?color=%23E8A020'
 const linktreeRaizes = 'https://api.iconify.design/simple-icons:linktree.svg?color=%23E8A020'
 
 export const networksOGAAtom = atom<TNetworks[]>([
@@ -38,7 +39,7 @@ export const networksRaizesAtom = atom<TNetworks[]>([
   { uri: 'https://www.instagram.com/raizesds/',                    image: `${BASE}/E8A020/instagram-new.png` },
   { uri: 'https://www.youtube.com/@raizesturbr',                   image: `${BASE}/E8A020/youtube-play.png` },
   { uri: 'https://www.linkedin.com/company/raizesds/',             image: `${BASE}/E8A020/linkedin.png` },
-  { uri: 'https://bsky.app/profile/raizesds.bsky.social',          image: blueskyRaizes },
+  { uri: 'https://raizesds.com.br/pt/',                            image: siteRaizes },
   { uri: 'https://api.whatsapp.com/send?phone=5511950730928',      image: `${BASE}/E8A020/whatsapp.png` },
   { uri: 'https://linktr.ee/raizesds',                             image: linktreeRaizes },
 ])

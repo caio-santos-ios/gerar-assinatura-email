@@ -92,7 +92,7 @@ export default function SignatureRaizes({ name, email, phone, job, pronoun, size
               </table>
 
               {/* Site */}
-              <div style={{ marginTop: '8px', textAlign: 'end' }}>
+              {/* <div style={{ marginTop: '8px', textAlign: 'end' }}>
                 
                 <a  href="https://www.raizesds.com.br"
                   target="_blank"
@@ -105,7 +105,7 @@ export default function SignatureRaizes({ name, email, phone, job, pronoun, size
                 >
                   www.raizesds.com.br
                 </a>
-              </div>
+              </div> */}
             </td>
 
             {/* ── DIVISOR ── */}
