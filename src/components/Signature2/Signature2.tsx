@@ -39,7 +39,7 @@ export default function Signature1({ong, name, email, phone, job, pronoun, sizeN
   const logoSrc = ong == 'oga'
     ? 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764621984/OGA/cropped-white-background_bzsb2h_mizr0o.png'
     : ong == 'raizes'
-    ? 'URL_DA_LOGO_RAIZES' // TODO: substituir pela URL real
+    ? 'URL_DA_LOGO_RAIZES' 
     : 'https://res.cloudinary.com/dia2yiu6k/image/upload/v1764664826/LANGUAGE-FOR-JUSTICE/logo_tfix4z.png'
 
   return (
@@ -81,7 +81,7 @@ export default function Signature1({ong, name, email, phone, job, pronoun, sizeN
                 </td>             
             </tr>
           </tbody>                   
-         </table>     
+        </table>     
     </div>
   )
 }
