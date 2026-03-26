@@ -120,7 +120,7 @@ export default function SignatureRaizes({ name, email, phone, job, pronoun, size
 
               {/* Logo */}
               <div style={{ marginBottom: '12px' }}>
-                <a href="https://raizes.org/" target="_blank">
+                <a href="https://raizesds.com.br/pt/" target="_blank">
                   <img
                     width={sizeLogo}
                     src="https://res.cloudinary.com/dupjcwozv/image/upload/v1774463627/WhatsApp_Image_2026-03-25_at_12.13.08__1_-removebg-preview_rwxjfl.png"
